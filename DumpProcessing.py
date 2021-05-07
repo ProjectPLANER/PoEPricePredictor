@@ -14,7 +14,7 @@ class PoEDataImporter:
         self.league_names = list(self.df_files["League"])
         self.df = self.get_data(self.df_files, self.latest_currency)
 
-    def get_currency_file_paths(self, dir_path="*/*", extension=".csv"):
+    def get_currency_file_paths(self, dir_path="*/ninjaData/*", extension=".csv"):
         """ Get all currency files. Downloaded and unzipped data dumps from poe.ninja.
             :param string: dir_path:
                 The directory to search for files in. Defaults to current dir.
@@ -161,6 +161,7 @@ class PoEDataImporter:
         return df
 
     def plot_currency(self, df=None, league_names=None, currency_list=None):
+        print("doing")
         """ A plotly scatter plot of each currency over the days since the league started.
             The currency plotted can be adjusted in the dropdown menu.
             Leagues can be toggled on the right hand legend.
